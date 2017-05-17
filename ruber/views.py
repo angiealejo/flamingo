@@ -13,11 +13,14 @@ from .models import Phoenicopterus
 # App Serializers
 from .serializers import PhoenicopterusSerializer
 
+# App Filters
+from .filters import PhoenicopterusFilter
 # Other Apps Utils
 from utils.pagination import GenericPagination
 
 
-class PhoenicopterusViewset(viewsets.ModelViewSet):
+# Example of viewset using attribute filter fields
+class PhoenicopterusViewSet(viewsets.ModelViewSet):
     queryset = Phoenicopterus.objects.all().order_by('-id')
     serializer_class = PhoenicopterusSerializer
     pagination_class = GenericPagination
@@ -28,3 +31,12 @@ class PhoenicopterusViewset(viewsets.ModelViewSet):
         'age',
         'genre'
     )
+
+
+# Example of viewset using attribute filter class
+class PhoenicopterusViewSet2(viewsets.ModelViewSet):
+    queryset = Phoenicopterus.objects.all().order_by('-id')
+    serializer_class = PhoenicopterusSerializer
+    pagination_class = GenericPagination
+    filter_backends = (DjangoFilterBackend,)
+    filter_class = PhoenicopterusFilter

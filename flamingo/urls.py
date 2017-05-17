@@ -21,13 +21,20 @@ from django.conf.urls import include
 from rest_framework import routers
 
 # Ruber App Models
-from ruber.views import PhoenicopterusViewset
+from ruber.views import PhoenicopterusViewSet
+from ruber.views import PhoenicopterusViewSet2
+
 
 router = routers.DefaultRouter()
 
 router.register(
-    'phoenicopterus',
-    PhoenicopterusViewset
+    'phoenicopterus_with_fields',
+    PhoenicopterusViewSet
+
+)
+router.register(
+    'phoenicopterus_with_class',
+    PhoenicopterusViewSet2
 
 )
 urlpatterns = [
