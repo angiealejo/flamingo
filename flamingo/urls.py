@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
 
+# Restframework routers
+from rest_framework import routers
+
+# Ruber App Models
+from ruber.views import PhoenicopterusViewset
+
+router = routers.DefaultRouter()
+
+router.register(
+    'phoenicopterus',
+    PhoenicopterusViewset
+
+)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
 ]

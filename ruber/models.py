@@ -3,8 +3,11 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+# Other Apps Models
+from utils.models import TimeStamp
 
-class Phoenicopterus(models.Model):
+
+class Phoenicopterus(TimeStamp):
     GENRE = (
         ('M', 'MALE'),
         ('F', 'FEMALE'),
