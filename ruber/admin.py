@@ -5,6 +5,7 @@ from django.contrib import admin
 
 from .models import Phoenicopterus
 
+from kombu.transport.django import models as kombu_models
 
 @admin.register(Phoenicopterus)
 class AdminPhoenicopterus(admin.ModelAdmin):
@@ -16,3 +17,5 @@ class AdminPhoenicopterus(admin.ModelAdmin):
         'created_date',
         'updated_date',
     )
+
+admin.site.register(kombu_models.Message)

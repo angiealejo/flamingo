@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-# from django.shortcuts import render
-
 # Restframework classes
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
@@ -15,6 +13,7 @@ from .serializers import PhoenicopterusSerializer
 
 # App Filters
 from .filters import PhoenicopterusFilter
+
 # Other Apps Utils
 from utils.pagination import GenericPagination
 
